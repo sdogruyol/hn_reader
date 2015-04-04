@@ -18,8 +18,7 @@ class ListModel < JPanel
     model = DefaultListModel.new
     list = JList.new model
     pane = JScrollPane.new list
-
-    add pane, BorderLayout::NORTH
+    add pane
   end
 end
 
