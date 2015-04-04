@@ -2,6 +2,10 @@
 
 This is an experimental Hacker News Reader GUI made with JRuby.
 
+# Screenshot
+
+[Screen](screenshot.png)
+
 ## Installation
 
 Clone this repo
@@ -12,6 +16,5 @@ And
 
     cd hn_reader
     jruby hacker_news_reader.rb
-
 
 ***Important***: You must have a working JRuby 1.7+ installation.
