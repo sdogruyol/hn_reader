@@ -1,10 +1,9 @@
-require "java"
+require 'java'
 require 'rss'
 
 java_import java.awt.BorderLayout
 java_import java.awt.event.ActionEvent
 java_import java.awt.event.ActionListener
-
 java_import javax.swing.DefaultListModel
 java_import javax.swing.JButton
 java_import javax.swing.JFrame
@@ -33,10 +32,10 @@ class ListModel < JPanel
   end
 end
 
-class HNClient < JFrame
+class HackerNewsReader < JFrame
   def initialize
     super
-    frame = JFrame.new("Hacker News Client")
+    frame = JFrame.new('Hacker News Reader')
     frame.setDefaultCloseOperation(JFrame::EXIT_ON_CLOSE)
     frame.setContentPane ListModel.new
     frame.setSize(1024, 768)
@@ -44,4 +43,4 @@ class HNClient < JFrame
   end
 end
 
-HNClient.new
+HackerNewsReader.new
