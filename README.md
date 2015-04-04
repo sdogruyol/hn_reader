@@ -4,7 +4,7 @@ This is an experimental Hacker News Reader GUI made with JRuby.
 
 # Screenshot
 
-[Screen](screenshot.png)
+![Screenshot](screenshot.png?raw=true)
 
 ## Installation
 
