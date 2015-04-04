@@ -1,4 +1,5 @@
 require "java"
+require 'rss'
 
 java_import java.awt.BorderLayout
 java_import java.awt.event.ActionEvent
@@ -11,6 +12,14 @@ java_import javax.swing.JList
 java_import javax.swing.JPanel
 java_import javax.swing.JScrollPane
 
+class RssParser
+  attr_reader :items
+
+  def initialize
+    @items = RSS::Parser.parse(open('https://news.ycombinator.com/rss').read, false).items[0...30]
+  end
+end
+
 class ListModel < JPanel
   def initialize
     super
@@ -18,6 +27,8 @@ class ListModel < JPanel
     model = DefaultListModel.new
     list = JList.new model
     pane = JScrollPane.new list
+    parser = RssParser.new
+    parser.items.each { |item| model.add_element item.title }
     add pane
   end
 end
